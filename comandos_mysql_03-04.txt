@@ -23,7 +23,17 @@ SELECT * FROM teste02;
 INSERT INTO teste01(nome, idade, id_curso) VALUES
 ('Claudio', 27, 2),
 ('Manuel', 53, 1),
-('Maria', 32 ,3);
+('Maria', 32 ,3), 
+('João SIlva', 21, 1),
+('Maria Souza', 23, 2),
+('Pedro Oliveira', 22, 3),
+('Ana Costa', 20, 1),
+('Lucas Almeida', 24, 2),
+('Carla Pereira', 22, 3),
+('Gabriel Santos', 19, 1),
+('Fernanda Lima', 25, 2),
+('Rodrigo Martins', 23, 3),
+('Breatriz Rocha', 20, 1);
 
 INSERT INTO teste02(nome_curso, periodo) VALUES 
 ('ADS', 'Noturno'),
