@@ -1,0 +1,17 @@
+CREATE DATABASE conteudoIntermedio;
+
+USE conteudoIntermedio;
+
+CREATE TABLE teste01 (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	nome VARCHAR(50),
+    idade INT,
+    id_curso INT,
+    FOREIGN KEY (id_curso) REFERENCES teste02(id)
+);
+
+CREATE TABLE teste02(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    nome_curso VARCHAR(25),
+    periodo VARCHAR(25)
+);
