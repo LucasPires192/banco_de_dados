@@ -123,3 +123,11 @@ FROM vendas v
 JOIN livros l ON v.livro_id = l.id
 GROUP BY l.titulo
 ORDER BY total_vendas DESC;
+
+-- 3. Encontrar autores com mais de 1 livro publicado
+SELECT a.nome, COUNT(l.id) AS total_livros
+FROM autores a
+JOIN livros l ON  a.id = l.autor_id
+GROUP BY a.nome
+HAVING total_livros > 1;
+
