@@ -118,16 +118,16 @@ JOIN editoras e ON l.editora_id = e.id;	-- Dar um apelido "e" para a tabela edit
 
 -- 2. Calcular total de vendas por livro
 SELECT l.titulo,
-SUM(v.quantidade * v.preco_unitario) AS total_vendas
+SUM(v.quantidade * v.preco_unitario) AS total_vendas	-- Uso da função sum para fazer operações aritimeticas com os bancos de dados
 FROM vendas v
 JOIN livros l ON v.livro_id = l.id
 GROUP BY l.titulo
 ORDER BY total_vendas DESC;
 
 -- 3. Encontrar autores com mais de 1 livro publicado
-SELECT a.nome, COUNT(l.id) AS total_livros
+SELECT a.nome, COUNT(l.id) AS total_livros -- Uso da funcao count para contar os ids dos livros
 FROM autores a
 JOIN livros l ON  a.id = l.autor_id
 GROUP BY a.nome
-HAVING total_livros > 1;
+HAVING total_livros > 1;	-- Uso da funcao having para dar uma condicao para mostrar as informações
 
