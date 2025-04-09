@@ -115,4 +115,11 @@ SELECT l.titulo, a.nome AS autor, e.nome AS editora -- Seleciona o titulo da tab
 FROM livros l -- Expecifica de tabela principal e dando um apelido de "l"
 JOIN autores a ON l.autor_id = a.id	-- Dar um apelido "a" para a tabela autores e diz para selecionar o autor_id da tabela livros é igual a id da tabela autores
 JOIN editoras e ON l.editora_id = e.id;	-- Dar um apelido "e" para a tabela editoras e diz para selecionar o editora_id da tablea livros é igual a id da tabela editoras
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- 2. Calcular total de vendas por livro
+SELECT l.titulo,
+SUM(v.quantidade * v.preco_unitario) AS total_vendas
+FROM vendas v
+JOIN livros l ON v.livro_id = l.id
+GROUP BY l.titulo
+ORDER BY total_vendas DESC;
