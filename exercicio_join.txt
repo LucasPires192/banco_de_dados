@@ -141,4 +141,4 @@ JOIN autores a ON l.autor_id = a.id
 JOIN editoras e ON l.editora_id = e.id
 JOIN vendas v ON v.livro_id = l.id
 GROUP BY l.titulo
-ORDER BY l.titulo
+ORDER BY l.titulo;
