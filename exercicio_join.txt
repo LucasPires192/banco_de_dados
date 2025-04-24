@@ -131,3 +131,14 @@ JOIN livros l ON  a.id = l.autor_id
 GROUP BY a.nome
 HAVING total_livros > 1;	-- Uso da funcao having para dar uma condicao para mostrar as informações
 
+-- Seleciona todos os dados de todas as tabelas
+SELECT l.id AS id_livro, l.titulo, l.ano_publicacao, 
+a.id AS id_autores, a.nome AS autor, a.nacionalidade AS nacionalidade_autor,
+e.id AS id_editoras, e.nome AS editora, e.pais AS pais_editora,
+v.id AS id_vendas, v.data_venda, v.quantidade, v.preco_unitario AS preco
+FROM livros l
+JOIN autores a ON l.autor_id = a.id
+JOIN editoras e ON l.editora_id = e.id
+JOIN vendas v ON v.livro_id = l.id
+GROUP BY l.titulo
+ORDER BY l.titulo
